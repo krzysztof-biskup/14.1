@@ -1,21 +1,20 @@
 var elem = document.querySelector('.main-carousel');
+var progressBar = document.querySelector('.progress-bar');
+var buttonClickReset = document.querySelector('.button');
 
 var flkty = new Flickity(elem, {
   // options
   cellAlign: 'left',
   contain: true,
   hash: true,
-  pageDots: false,
+  pageDots: false
 });
 
-var progressBar = document.querySelector('.progress-bar')
-
-flkty.on( 'scroll', function( progress ) {
+flkty.on('scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
   progressBar.style.width = progress * 100 + '%';
 });
 
-var buttonClickReset = document.querySelector('.button');
-buttonClickReset.addEventListener( 'click', function( event ) {
+buttonClickReset.addEventListener('click', function() {
   flkty.select(0);
 });
