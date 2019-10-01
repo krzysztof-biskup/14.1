@@ -2,6 +2,13 @@ var elem = document.querySelector('.main-carousel');
 var progressBar = document.querySelector('.progress-bar');
 var buttonClickReset = document.querySelector('.button');
 
+var templateSlide = document.getElementById('template-slide').innerHTML;
+
+for (var i = 0; i < slajds.length; i++) {
+  var generatedSlide = Mustache.render(templateSlide, slajds[i]);
+  result.insertAdjacentHTML('beforeend', generatedSlide);
+};
+
 var flkty = new Flickity(elem, {
   // options
   cellAlign: 'left',
@@ -18,3 +25,4 @@ flkty.on('scroll', function( progress ) {
 buttonClickReset.addEventListener('click', function() {
   flkty.select(0);
 });
+
