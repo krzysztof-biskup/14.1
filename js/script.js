@@ -15,7 +15,9 @@ var flkty = new Flickity(elem, {
   cellAlign: 'left',
   contain: true,
   hash: true,
-  pageDots: false
+  pageDots: false,
+  freeScroll: true,
+  cellSelector: '.carousel-cell'
 });
 
 flkty.on('scroll', function( progress ) {
@@ -24,17 +26,32 @@ flkty.on('scroll', function( progress ) {
 });
 
 buttonClickReset.addEventListener('click', function() {
-  flkty.select(0);
+  flkty.select(1);
 });
 
-// Initialize and add the map
+  // Initialize and add the map
 window.initMap = function initMap() {
   // The location of Uluru
-  var uluru = {lat: 49.628167, lng: 20.703000};
+  //var uluru = {lat: 49.628167, lng: 20.703000};
+
   // The map, centered at Uluru
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
+      document.getElementById('map'), {zoom: 4, center: slajds[0].coords});
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+  
+
+  for (let i = 0; i < slajds.length; i++) {
+    var marker = new google.maps.Marker({position: slajds[i].coords, map: map}); 
+    
+    marker.addListener('click', function() {
+      flkty.select(i)
+    });
+  
+  }
 }
+
+
+
+
+
 

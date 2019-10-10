@@ -14,7 +14,7 @@
 <div class="button-group">
     <button class="button">Reset</button>
 </div> 
- 
+
 <div class="main-carousel" id="result">
     <script id="template-slide" type="x-tmpl-mustache">          
         <div class="carousel-cell" id={{id}} style="background-image: url({{ image }})">
@@ -34,19 +34,33 @@
             image: 'http://lorempixel.com/1920/1080',
             title: 'slajd 1',
             description: 'opis slajd 1',
-            id: 'carousel-cell1'
+            id: 'carousel-cell1',
+            coords: {lat: -25.363, 
+                    lng: 131.044}
         },
         {
             image: 'http://lorempixel.com/1920/1080',
             title: 'slajd 2',
             description: 'opis slajd 2',
-            id: 'carousel-cell2'
+            id: 'carousel-cell2',
+            coords: {lat: 49.628167,
+                     lng: 20.703000}
         },
         {
             image: 'http://lorempixel.com/1920/1080',
             title: 'slajd 3',
             description: 'opis slajd 3',
-            id: 'carousel-cell3'
+            id: 'carousel-cell3',
+            coords: {lat: 43.262932,
+                     lng: 16.611044}
+        },
+        {
+            image: 'http://lorempixel.com/1920/1080',
+            title: 'slajd 4',
+            description: 'opis slajd 4',
+            id: 'carousel-cell4',
+            coords: {lat: 45.262932,
+                     lng: 16.611044}
         }
     ];
 </script>
@@ -54,7 +68,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
 <script src="vendor/hash.js"></script>
 <script src="js/script.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgmG-Qs2bc_onRmWU2GWpazyy5urpuFsQ&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJUTPydGAimC-c88u_WQ1kCTegpHY52eM&callback=initMap"></script>
 
 </body>
 </html>
