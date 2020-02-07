@@ -1,11 +1,44 @@
-.main-carousel .carousel-cell { width: 100%; height: 50vh; min-height: 250px; counter-increment: gallery-cell; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; background-size: cover; }
+.main-carousel .carousel-cell {
+  width: 100%;
+  height: 50vh;
+  min-height: 250px;
+  counter-increment: gallery-cell;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  background-size: cover;
+}
 
-.main-carousel .text-container { position: absolute; color: #FFF; font-size: 36px; max-width: 1200px; text-align: center; }
+.main-carousel .text-container {
+  position: absolute;
+  color: #FFF;
+  font-size: 36px;
+  max-width: 1200px;
+  text-align: center;
+}
 
-.progress-bar { height: 20px; width: 0; background: #333; }
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #333;
+}
 
-.button-group { position: absolute; z-index: 1; right: 0; }
+.button-group {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+}
+
 
 .button-group .button { font-size: 22px; }
 
 #map { height: 400px; /* The height is 400 pixels */ width: 100%; /* The width is the width of the web page */ }
+
+.button-group .button {
+  font-size: 22px;
+}
+/*# sourceMappingURL=style.css.map */
+

@@ -27,6 +27,7 @@ buttonClickReset.addEventListener('click', function() {
   flkty.select(0);
 });
 
+
 window.initMap = function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: slajds[0].coords});
   var flkty = new Flickity('.main-carousel');
