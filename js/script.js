@@ -10,11 +10,12 @@ for (var i = 0; i < slajds.length; i++) {
 };
 
 var flkty = new Flickity(elem, {
-  // options
   cellAlign: 'left',
   contain: true,
   hash: true,
-  pageDots: false
+  pageDots: false,
+  freeScroll: true,
+  cellSelector: '.carousel-cell'
 });
 
 flkty.on('scroll', function( progress ) {
@@ -25,4 +26,24 @@ flkty.on('scroll', function( progress ) {
 buttonClickReset.addEventListener('click', function() {
   flkty.select(0);
 });
+
+
+window.initMap = function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: slajds[0].coords});
+  var flkty = new Flickity('.main-carousel');
+  flkty.on( 'change', function( index ) {
+    map.panTo(slajds[index].coords);
+});
+  for (let i = 0; i < slajds.length; i++) {
+    var marker = new google.maps.Marker({position: slajds[i].coords, map: map});   
+    marker.addListener('click', function() {
+      flkty.select(i)
+    });
+  }
+}
+
+
+
+
+
 
